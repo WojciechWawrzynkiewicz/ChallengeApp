@@ -1,4 +1,4 @@
-﻿var number = 35621111;
+﻿var number = 356275344;
 string numberInString = number.ToString();
 char[] letters = numberInString.ToArray();
 
