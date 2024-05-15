@@ -57,6 +57,7 @@ foreach (char c in letters)
     }
 }
 
+Console.WriteLine("W liczbie " + number);
 Console.WriteLine("Liczba 0 występuje w liczbie: " + counter0);
 Console.WriteLine("Liczba 1 występuje w liczbie: " + counter1);
 Console.WriteLine("Liczba 2 występuje w liczbie: " + counter2);
