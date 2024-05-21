@@ -25,20 +25,23 @@ employee3.AddScore(5);
 employee3.AddScore(3);
 employee3.AddScore(1);
 
-
-Employee bestScoreEmployee = employee1;
-int bestScore = employee1.Result;
-
-if (employee2.Result > bestScore)
+List<Employee> employees = new List<Employee>()
 {
-    bestScoreEmployee = employee2;
-    bestScore = employee2.Result;
-} 
-if (employee3.Result > bestScore)
+    employee1,employee2,employee3
+};
+
+int bestScore = 0;
+Employee bestScoreEmployee = null;
+
+foreach (var employee in employees)
 {
-    bestScoreEmployee = employee3;
-    bestScore = employee3.Result;
+    if(employee.Result > bestScore)
+    {
+        bestScore = employee.Result;
+        bestScoreEmployee = employee;
+    }
 }
+
 
 var result1 = employee1.Result;
 var result2 = employee2.Result;
