@@ -1,70 +1,50 @@
-﻿var number = 356275344;
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+﻿using ChallengeApp;
 
-int counter0 = 0;
-int counter1 = 0;
-int counter2 = 0;
-int counter3 = 0;
-int counter4 = 0;
-int counter5 = 0;
-int counter6 = 0;
-int counter7 = 0;
-int counter8 = 0;
-int counter9 = 0;
+Employee employee1 = new Employee("Wojtek", "abc", 24);
+Employee employee2 = new Employee("Marek", "abcd", 27);
+Employee employee3 = new Employee("Jacek", "abcde", 31);
 
-foreach (char c in letters)
+// Employee 1
+employee1.AddScore(5);
+employee1.AddScore(7);
+employee1.AddScore(3);
+employee1.AddScore(4);
+employee1.AddScore(9);
+
+// Employee 2
+employee2.AddScore(3);
+employee2.AddScore(6);
+employee2.AddScore(9);
+employee2.AddScore(8);
+employee2.AddScore(6);
+
+// Employee 3
+employee3.AddScore(3);
+employee3.AddScore(7);
+employee3.AddScore(5);
+employee3.AddScore(3);
+employee3.AddScore(1);
+
+
+Employee bestScoreEmployee = employee1;
+int bestScore = employee1.Result;
+
+if (employee2.Result > bestScore)
 {
-    if (c == '0')
-    {
-        counter0++;
-    }
-    else if (c == '1')
-    {
-        counter1++;
-    }
-    else if (c == '2')
-    {
-        counter2++;
-    }
-    else if (c == '3')
-    {
-        counter3++;
-    }
-    else if (c == '4')
-    {
-        counter4++;
-    }
-    else if (c == '5')
-    {
-        counter5++;
-    }
-    else if (c == '6')
-    {
-        counter6++;
-    }
-    else if (c == '7')
-    {
-        counter7++;
-    }
-    else if (c == '8')
-    {
-        counter8++;
-    }
-    else if (c == '9')
-    {
-        counter9++;
-    }
+    bestScoreEmployee = employee2;
+    bestScore = employee2.Result;
+} 
+if (employee3.Result > bestScore)
+{
+    bestScoreEmployee = employee3;
+    bestScore = employee3.Result;
 }
 
-Console.WriteLine("W liczbie " + number);
-Console.WriteLine("Liczba 0 występuje w liczbie: " + counter0);
-Console.WriteLine("Liczba 1 występuje w liczbie: " + counter1);
-Console.WriteLine("Liczba 2 występuje w liczbie: " + counter2);
-Console.WriteLine("Liczba 3 występuje w liczbie: " + counter3);
-Console.WriteLine("Liczba 4 występuje w liczbie: " + counter4);
-Console.WriteLine("Liczba 5 występuje w liczbie: " + counter5);
-Console.WriteLine("Liczba 6 występuje w liczbie: " + counter6);
-Console.WriteLine("Liczba 7 występuje w liczbie: " + counter7);
-Console.WriteLine("Liczba 8 występuje w liczbie: " + counter8);
-Console.WriteLine("Liczba 9 występuje w liczbie: " + counter9);
+var result1 = employee1.Result;
+var result2 = employee2.Result;
+var result3 = employee3.Result;
+Console.WriteLine("Employee score " + employee1.Name + " = " + result1);
+Console.WriteLine("Employee score " + employee2.Name + " = " + result2);
+Console.WriteLine("Employee score " + employee3.Name + " = " + result3);
+
+Console.WriteLine("Best score employee is: " + bestScoreEmployee.Name);
