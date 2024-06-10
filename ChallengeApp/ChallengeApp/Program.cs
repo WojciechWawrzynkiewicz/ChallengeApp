@@ -10,6 +10,7 @@ employee1.AddScore(7);
 employee1.AddScore(3);
 employee1.AddScore(4);
 employee1.AddScore(9);
+employee1.SubScore(-2);
 
 // Employee 2
 employee2.AddScore(3);
